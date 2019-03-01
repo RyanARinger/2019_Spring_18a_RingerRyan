@@ -35,13 +35,13 @@ public class JavaApplication1 {
                 + "You are currently " + userAge + " years old.\n"
                 + "You will be " + (userAge + 5) + " years old in 5 years.");
         
-        System.out.println("Please enter your name: ");
-        username = keyboard.nextLine();
-        System.out.println("Please enter your age: ");
-        userAge = Integer.parseInt(keyboard.nextLine());
-        System.out.println("Hello, " + username + "!\n"
-                + "You are currently " + userAge + " years old"
-                + "\nYou will be " + (userAge + 5) + " years old in 5 years.");
+//        System.out.println("Please enter your name: ");
+//        username = keyboard.nextLine();
+//        System.out.println("Please enter your age: ");
+//        userAge = Integer.parseInt(keyboard.nextLine());
+//        System.out.println("Hello, " + username + "!\n"
+//                + "You are currently " + userAge + " years old"
+//                + "\nYou will be " + (userAge + 5) + " years old in 5 years.");
         
     }
     
