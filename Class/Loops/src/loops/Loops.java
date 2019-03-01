@@ -35,25 +35,35 @@ public class Loops {
         
         // prompt loop
         do{
-            System.out.println("Enter your name: ");
+            
+            
+            System.out.println("Enter your name or type 'EXIT': ");
             name = scan.nextLine();
-            
-            System.out.println("Enter your age: ");
-            age = Integer.parseInt(scan.nextLine());
-            
-            System.out.println("Enter your salary: ");
-            salary = Float.parseFloat(scan.nextLine());
-            
-            if(name.equals("John")){
-                outString = String.format("Hello Prof. Oconnor, \nYou are %d years old\n And your Salary is: $%.2f\n", age, salary);
+            if(name.equalsIgnoreCase("exit")){
+                done = true;
             }
             else{
-                outString = String.format("Hello %s, \nYou are %d years old\n And your Salary is: $%.2f\n", name, age, salary);
+                System.out.println("Enter your age: ");
+                age = Integer.parseInt(scan.nextLine());
+
+                System.out.println("Enter your salary: ");
+                salary = Float.parseFloat(scan.nextLine());
+
+                if(name.equals("John")){
+                    outString = String.format("Hello Prof. Oconnor, \n"
+                            + "You are %d years old \n"
+                            + "And your Salary is: $%.2f per year\n"
+                            , age, salary);
+                }
+                else{
+                    outString = String.format("Hello %s, \n"
+                            + "You are %d years old\n"
+                            + "And your Salary is: $%.2f per year\n"
+                            , name, age, salary);
+                }
+
+                System.out.println(outString);
             }
-            
-            System.out.println(outString);
-            
-            sout
             
         }while(!done);
                 
