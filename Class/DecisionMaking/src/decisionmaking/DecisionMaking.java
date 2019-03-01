@@ -18,7 +18,7 @@ public class DecisionMaking {
 	Integer numChoice;
 	
 	
-	// menu list
+//	// menu list
 	System.out.println("This is our gradebook: ");
 	System.out.println("Pick an action to perform:");
 	System.out.println("1. Enter a graded");
@@ -39,12 +39,34 @@ public class DecisionMaking {
 	if(numChoice == 1){
 	    System.out.println("you picked: option 1");
 	}
-	if(numChoice == 2){
+        else if(numChoice == 2){
 	    System.out.println("you picked: option 2");
 	}
-	if(numChoice == 3){
+        else if(numChoice == 3){
 	    System.out.println("you picked: option 3");
 	}
+        else{
+            System.out.println("No Choice Exists for: '" + numChoice + "'");
+        }
+        
+        // menu opertaion                                     ///////// Doesn't Work /////////
+//	if(choice.equals ("Enter Grade")){
+//	    System.out.println("you picked: option 1");
+//	}
+//        else if(choice.equals ("Compute Averages")){
+//	    System.out.println("you picked: option 2");
+//	}
+//        else if(choice.equals ("Exit")){
+//	    System.out.println("you picked: option 3");
+//	}
+//        else{
+//            System.out.println("No Choice Exists for: '" + choice + "'");
+//        }
+        
+        
+        // ternary logical statement to assign vaiables
+        //(variable) = (tested variable) (operator) (test value) ? (value to set variable if true) : (value to set variable if false); 
+//        numChoice = numChoice < 0 ? 0 : 1;
     }
 
 }
