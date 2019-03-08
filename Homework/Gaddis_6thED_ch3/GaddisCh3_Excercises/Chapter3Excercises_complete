@@ -1,0 +1,401 @@
+/////Roman Numeral Calculator//////////////////////////////////////////////////////////////////////
+
+/* 
+ * File:        gaddis_6thed_3.pkg1_romannumerals.java
+ * Author:      Ryan Ringer 
+ * Purpose:     Roman Numeral Calculator
+ * Created on:  March 6th, 2019
+ */
+
+package gaddis_6thed_3.pkg1_romannumerals;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Gaddis_6thED_31_RomanNumerals {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        
+        // Constant Variables
+
+        
+        // Declare all Variables Here
+        Integer input;
+        String output = null;
+        boolean inRange;
+        // Input or initialize values Here
+        do{
+            System.out.println("Enter an integer between 1 and 10: ");
+            input = Integer.parseInt(scan.nextLine());
+            //System.out.println(input);
+            
+            if(input < 1 || input > 10){
+                System.out.println("ERROR: Value entered was out of bounds\nPlease try again");
+                inRange = false;
+            }
+            else{
+                inRange = true;
+            }
+        }while(!inRange);
+        
+        
+        
+        // Process/Calculations Here
+
+        switch(input){
+            case 1:
+                output = String.format("I");
+                break;
+            case 2:
+                output = String.format("II");
+                break;
+            case 3:
+                output = String.format("III");
+                break;
+            case 4:
+                output = String.format("IV");
+                break;
+            case 5:
+                output = String.format("V");
+                break;
+            case 6:
+                output = String.format("VI");
+                break;
+            case 7:
+                output = String.format("VII");
+                break;
+            case 8:
+                output = String.format("VIII");
+                break;
+            case 9:
+                output = String.format("IX");
+                break;
+            case 10:
+                output = String.format("X");
+                break;
+        }
+        
+        // Output Located Here
+        System.out.println("The value entered in roman numeral form is: " + output);
+        
+        // Exit
+    }
+
+}
+
+/////Multiply the Day and Month and test if==year//////////////////////////////////////////////////
+/* 
+ * File:        gaddis_6thed_3.pkg2_magicdates.java
+ * Author:      Ryan Ringer 
+ * Purpose:     Magic date detector
+ * Created on:  March 6th, 2019
+ */
+
+package gaddis_6thed_3.pkg2_magicdates;
+
+import java.util.Scanner;
+
+public class Gaddis_6thED_32_MagicDates {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        // Constant Variables
+
+        // Declare all Variables Here
+        Integer month, day, year;
+        Integer mNum;
+        String output;
+        boolean tdYear = false;
+        // Input or initialize values Here
+        System.out.println("Please enter a date.\n month:");
+        month = Integer.parseInt(scan.nextLine());
+        System.out.println("Day: ");
+        day = Integer.parseInt(scan.nextLine());
+        
+        do{
+            System.out.println("Year(two-digit)");
+            year = Integer.parseInt(scan.nextLine());
+            
+            if(year >= 100){
+                System.out.println("Error: year entered is not two digits or is "
+                                   + "less than zero\n TRY AGAIN");
+            }
+            else{
+                tdYear = true;
+            }
+        }while(!tdYear);
+        // Process/Calculations Here
+        mNum = day * month;
+        if(mNum.equals(year)){
+            output = String.format("The date %d/%d/%d, is magic!", month, day, year);
+        }
+        else{
+            output = String.format("The date %d/%d/%d, is not magic. Loser", month, day, year);
+        }
+        // Output Located Here
+
+        System.out.println(output);
+        // Exit
+    }
+
+}
+
+///// Body Mass Index Calculator///////////////////////////////////////////////////////////////////
+/* 
+ * File:        .java
+ * Author:      Ryan Ringer 
+ * Purpose:     
+ * Created on:  
+ */
+
+package gaddis_6thed_3.pkg3_bmi;
+
+import java.util.Scanner;
+
+public class Gaddis_6thED_33_BMI {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        // Constant Variables
+        final Integer val = 703;
+        
+        // Declare all Variables Here
+        double bmi;
+        Integer height;
+        Integer weight;
+        String output;
+        
+        // Input or initialize values Here
+        System.out.println("This program willoutput your BMI\n"
+                + "Enter your Height (in inches):");
+        height = Integer.parseInt(scan.nextLine());
+        System.out.println("Enter your weight (in Pounds):");
+        weight = Integer.parseInt(scan.nextLine());
+        
+        
+        // Process/Calculations Here
+        //BMI = Weight * 703 / Height2//
+        bmi = weight*val/(height*height);
+        
+        if(bmi>18.5){
+            output= String.format("Your BMI is %.2f, You're fat.", bmi);
+        }
+        else if(bmi<25){
+            output= String.format("Your BMI is %.2f, You're underweight.", bmi);
+        }
+        else{
+            output= String.format("Your BMI is %.2f, You're a healthy weight.", bmi);
+        }
+        // Output Located Here
+        
+        System.out.println(output);
+        
+        // Exit
+    }
+
+}
+
+/////Test Score Average Calculator///////////////////////////////////////////////////////////////////
+/* 
+ * File:        gaddis_6thed_3.pkg4_testscores.java
+ * Author:      Ryan Ringer 
+ * Purpose:     Test score average calculator
+ * Created on:  March 6th, 2019
+ */
+
+package gaddis_6thed_3.pkg4_testscores;
+
+import java.util.Scanner;
+
+public class Gaddis_6thED_34_TestScores {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        // Constant Variables
+        
+        // Declare all Variables Here
+        Integer score1, score2, score3;
+        Integer avg;
+        String output;
+        // Input or initialize values Here
+        System.out.println("Enter score #1");
+        score1 = Integer.parseInt(scan.nextLine());
+        
+        System.out.println("Enter score #2");
+        score2 = Integer.parseInt(scan.nextLine());
+        
+        System.out.println("Enter score #1");
+        score3 = Integer.parseInt(scan.nextLine());
+        
+        // Process/Calculations Here
+        avg = (score1 + score2 + score3)/3;
+        if(avg>=90){
+            //a
+            output = String.format("%d (A)", avg);
+        }
+        else if(avg>=80 && avg<90){
+            //b
+            output = String.format("%d (B)", avg);
+        }
+        else if(avg>=70 && avg<80){
+            //c
+            output = String.format("%d (C)", avg);
+        }
+        else if(avg>=60 && avg<70){
+            //d
+            output = String.format("%d (D)", avg);
+        }
+        else{
+            //f
+            output = String.format("%d (F)", avg);
+        }
+        // Output Located Here
+
+        System.out.println("The Average score was " + output);
+        
+        // Exit
+    }
+
+}
+
+/////Mass to Weight Calculator///////////////////////////////////////////////////////////////////////
+/* 
+ * File:        Gaddis_6thED_35_MassWeight.java
+ * Author:      Ryan Ringer 
+ * Purpose:     Weight Calculator
+ * Created on:  March 6th, 2019
+ */
+
+package gaddis_6thed_3.pkg5_massweight;
+
+import java.util.Scanner;
+
+public class Gaddis_6thED_35_MassWeight {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        // Constant Variables
+        final Integer HEAVY = 1000;
+        final Integer LIGHT = 10;
+        final Double GRAV = 9.8;
+        
+        // Declare all Variables Here
+        Double mass;
+        Double newt;
+        String output;
+        // Input or initialize values Here
+        System.out.println("Enter the objects mass:");
+        mass = Double.parseDouble(scan.nextLine());
+        
+        // Process/Calculations Here
+        
+        ////weight = mass x 9.8////
+        newt = mass * GRAV;
+        
+        if(newt>HEAVY){
+            output= String.format("The object weighs %.2f newtons.\n"
+                    + "it is too heavy.", newt);
+        }
+        else if(newt<LIGHT){
+            output= String.format("The object weighs %.2f newtons.\n"
+                    + "it is too light.", newt);
+        }
+        else{
+            output= String.format("The object weighs %.2f newtons", newt);
+        }
+        // Output Located Here
+        System.out.println(output);
+        // Exit
+    }
+
+}
+
+/////Time Calculator/////////////////////////////////////////////////////////////////////////////////
+/* 
+ * File:        Gaddis_6thED_36_TimeCalc.java
+ * Author:      Ryan Ringer 
+ * Purpose:     Time converter
+ * Created on:  March 6th, 2019
+ */
+
+package gaddis_6thed_3.pkg6_timecalc;
+
+import java.util.Scanner;
+
+public class Gaddis_6thED_36_TimeCalc {
+
+    
+    public static void main(String[] args) {
+        // Seed random number/ initialize scanner
+
+        Scanner scan = new Scanner(System.in);
+        // Constant Variables
+        final Integer MINUTE = 60;
+        final Integer HOUR = 3600;
+        final Integer DAY = 86400; 
+        
+        // Declare all Variables Here
+        Integer input;
+        Integer remainder = 0;
+        Integer nDays = 0, nHours = 0, nMin = 0, nSecs = 0;
+        String output1 = "";
+        String output2 = ""; 
+        String output3 = "";
+        
+        // Input or initialize values Here
+        
+        System.out.println("Enter the number of seconds:");
+        input = Integer.parseInt(scan.nextLine());
+        remainder = input;
+        nSecs = input;
+        //System.out.println(input);
+        
+        // Process/Calculations Here
+
+        if(input>=MINUTE){
+            if(input>=HOUR){
+                if(input>=DAY){
+                    nDays = remainder/DAY;
+                    remainder = input - (nDays * DAY);
+                    nSecs = nSecs - (nDays * DAY);
+                }
+                else{
+                    nDays = 0;
+                }
+                nHours = remainder/HOUR;
+                remainder = input - (nHours * HOUR);
+                nSecs = nSecs - (nHours * HOUR);
+                
+            }
+            else{
+                nHours = 0;
+            }
+            nMin = remainder/MINUTE;
+            remainder = input - (nMin * MINUTE);
+            nSecs = nSecs - (nMin * MINUTE);
+        }
+        else{
+            nMin = 0;
+        }
+        // Output Located Here
+        System.out.println(nDays + " Day(s), " + nHours + " Hour(s), " + nMin + " Minute(s), " + nSecs +" Second(s).");
+        // Exit
+    }
+
+}
