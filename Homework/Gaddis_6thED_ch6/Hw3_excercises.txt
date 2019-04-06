@@ -1,0 +1,328 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author ringe
+ */
+public class Employee {
+    // Members
+    String name;
+    String id;
+    String dept;
+    String pos;
+    
+    // Constructors
+    public Employee(){
+	this.name = "";
+	this.id = "";
+	this.dept = "";
+	this.pos= "";
+    }
+    public Employee(String n, String i, String d, String p){
+	this.name = n;
+	this.id = i;
+	this.dept = d;
+	this.pos = p;
+    }
+    public Employee(String n, String i){
+	this.name = n;
+	this.id = i;
+	this.dept = "";
+	this.pos = "";
+    }
+    
+    // Mutators
+    public void setName( String n ){
+	name = n;
+    }
+    public void setId(String i){
+	id = i;
+    }
+    public void setDept(String d){
+	dept = d;
+    }
+    public void setPos(String p){
+	pos = p;
+    }
+    
+    // Accessors
+    public String getName(){
+	return name;
+    }
+    public String getId(){
+	return id;
+    }
+    public String getDept(){
+	return dept;
+    }
+    public String getPos(){
+	return pos;
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+/* 
+ * File:	Gaddis_6thED_6.2_CarClass.java
+ * Author:	Ryan Ringer
+ * Created on:	
+ * Purpose:	
+ */
+
+package gaddis_6thed_6.pkg2_carclass;
+
+
+public class Gaddis_6thED_62_CarClass {
+
+    
+    public static void main(String[] args) {
+	// Seed random number or initialize scanner
+        
+        
+        // Constant Variables
+	final String MAKE = "freestar";
+	final Integer MODEL = 2007;
+	
+        
+        // Declare all Variables Here
+        Car sedan1 = new Car(MAKE, MODEL);
+	Integer spd;
+	
+        // Input or initialize values Here
+        
+        
+        // Process/Calculations Here
+	System.out.println("Accelerating");
+	for (int i = 0; i < 5; i++) {
+	    sedan1.accelerate();
+	    spd = sedan1.getSpeed();
+	    System.out.println(spd);
+	}
+	System.out.println("Braking");
+	for (int i = 0; i < 5; i++) {
+	    sedan1.brake();
+	    spd = sedan1.getSpeed();
+	    System.out.println(spd);
+	}
+        
+        // Output Located Here
+       
+        
+        // Exit
+    }
+
+}
+///////// CarClass
+public class Car {
+    Integer speed;
+    Integer model;
+    String make;
+    
+    // Constructors
+    public Car(){
+	this.speed = 0;
+	this.model = 6969;
+	this.make = "The Bean Mobile";
+    }
+    public Car(String m, Integer n){
+	this.make = m;
+	this.model = n;
+	this.speed = 0;
+    }
+    
+    // Mutators
+    public void setSpeed(Integer s){
+	this.speed = s;
+    }
+    public void setModel(Integer m){
+	this.model = m;
+    }
+    public void setMake(String m){
+	this.make = m;
+    }
+    
+    // Accessors
+    public Integer getSpeed(){
+	return this.speed;
+    }
+    public Integer getModel(){
+	return this.model;
+    }
+    public String getMake(){
+	return make;
+    }
+    
+    // member functions
+    public void accelerate(){
+	this.speed+=5;
+    }
+    public void brake(){
+	this.speed-=5;
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+/* 
+ * File:	Gaddis_6thED_63_PersonalClass.java
+ * Author:	Ryan Ringer
+ * Created on:	
+ * Purpose:	
+ */
+
+package gaddis_6thed_6.pkg3_personalclass;
+
+
+public class Gaddis_6thED_63_PersonalClass {
+
+    
+    public static void main(String[] args) {
+	// Seed random number or initialize scanner
+        
+        
+        // Constant Variables
+
+        
+        // Declare all Variables Here
+        Person me = new Person("Ryan", "Colt st.", "(909) 420-6969", 21);
+	Person you = new Person("Sorry This is Late", "Norco", "(909) IMSORRY", 100);
+	Person baby = new Person("Baby", "Baby Crib", "N/A", 1);
+        // Input or initialize values Here
+        
+        
+        // Process/Calculations Here
+        
+        // Output Located Here
+        
+        
+        // Exit
+    }
+///////////////PersonClass
+
+public class Person {
+    String name;
+    String address;
+    Integer age;
+    String phone;
+    
+    public Person(){
+	this.name = "";
+	this.address = "";
+	this.age = 0;
+	this.phone = "";
+    }
+    public Person(String n, String a, String p, Integer y){
+	this.name = n;
+	this.address = a;
+	this.phone = p;
+	this.age = y;
+    }
+    
+    public void setName(String n){
+	this.name = n;
+    }
+    public void setAddress(String a){
+	this.address = a;
+    }
+    public void setPhone(String p){
+	this.phone = p;
+    }
+    public void setAge(Integer a){
+	this.age = a;
+    }
+    
+    public String getName(){
+	return this.name;
+    }
+    public String getAddy(){
+	return this.address;
+    }
+    public String getPhone(){
+	return this.phone;
+    }
+    public Integer getAge(){
+	return this.age;
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+/* 
+ * File:	Gaddis_6thED_64_RetailItem.java
+ * Author:	Ryan Ringer
+ * Created on:	
+ * Purpose:	
+ */
+
+package gaddis_6thed_6.pkg4_retailitem;
+
+
+public class Gaddis_6thED_64_RetailItem {
+
+    
+    public static void main(String[] args) {
+	// Seed random number or initialize scanner
+        
+        
+        // Constant Variables
+
+        
+        // Declare all Variables Here
+        Item item1 = new Item("Jacket", 10, 39);
+	Item item2 = new Item("Designer Jeans", 27, 12);
+	Item item3 = new Item("Shirt", 1, 1000);
+	
+        // Input or initialize values Here
+        
+        
+        // Process/Calculations Here
+	
+	item1.print();
+	item2.print();
+	item3.print();
+        
+        // Output Located Here
+        
+        
+        // Exit
+    }
+}
+//////////////ItemClass
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gaddis_6thed_6.pkg4_retailitem;
+
+/**
+ *
+ * @author ringe
+ */
+public class Item {
+    String desc;
+    Integer amt;
+    Integer price;
+    
+    public Item(String d, Integer a, Integer p){
+	this.desc = d;
+	this.amt = a;
+	this.price = p;
+    }
+    
+    public void setDesc(String d){
+	this.desc = d;
+    }
+    public void setAmt(Integer a){
+	this.amt = a;
+    }
+    public void setPrice(Integer p){
+	this.price = p;
+    }
+    
+    public void print(){
+	System.out.println("   " + this.desc + "   " + this.amt + "  $" + this.price);
+    }
+}
